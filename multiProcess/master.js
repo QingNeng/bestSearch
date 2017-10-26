@@ -1,0 +1,62 @@
+exports = module.exports.master = function(keyword, res) {
+	var cp = require('child_process');
+	var allData = [];
+
+	// var baiduProcess = cp.fork(__dirname + '/baiduProcess.js');
+	var bingProcess  = cp.fork(__dirname + '/bingProcess.js');
+	var sogouProcess = cp.fork(__dirname + '/sogouProcess.js');
+
+// send keyword to children process
+	// console.log('keyword:', keyword);
+	bingProcess.send(keyword);
+	sogouProcess.send(keyword);
+
+	function getSogouData() {
+		return new Promise((resolve, reject) => {
+			sogouProcess.on('message', function(m) {
+				resolve(m);
+			});
+		});
+	};
+
+	function getBingData() {
+		return new Promise((resolve, reject) => {
+			bingProcess.on('message', function(m) {
+				resolve(m);
+			});
+		});
+	}
+
+
+	async function getChildProData() {
+		await getBingData().then((m) => allData.push(m));
+		await getSogouData().then((m) => allData.push(m));
+
+		// test
+		// console.log(allData);
+		res.writeHead(200, {'Content-Type': 'text/html'});
+		var html = `<!DOCTYPE html>
+									<html lang="en">
+									<head>
+										<meta charset="UTF-8">
+										<title>Document</title>
+										<style type="text/css">
+											a {
+												text-decoration: none;
+												color: black;
+											}
+										</style>
+									</head>
+									<body style="margin-left: 30%;">
+										<h4 style="margin-left: 3%;"><a href=${allData[0][0]}>${allData[0][1]}  ---bing</a></h4>
+										<h4 style="margin-left: 3%;"><a href=${allData[1][0]}>${allData[1][1]}  ---sogou</a></h4>
+									</body>
+									</html>`;
+
+		// res.end(allData + '');
+		res.end(html);
+	}
+
+	getChildProData();
+
+} // exports
