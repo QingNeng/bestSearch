@@ -1,0 +1,31 @@
+form {
+  margin-top: 12%;
+}
+
+#submitTxt, span {
+  margin-left: 30%;
+}
+
+input {
+  margin-top: 10px;
+  height: 33px;
+}
+
+#submitTxt {
+  width: 400px;
+  border: 1px solid #3385FF;
+}
+
+#bn {
+  margin-left: -5px;
+  height: 39px;
+  width: 100px;
+  background-color: #3385FF;
+  color: white;
+  border-style: none;
+}
+
+input::-webkit-input-placeholder { /* WebKit browsers */ 
+  font-size:16px;
+  padding-left: 15px;
+} 

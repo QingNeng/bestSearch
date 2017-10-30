@@ -2,59 +2,20 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>BestSearch</title>
+	<link rel="stylesheet" type="text/css" href="./index.css">
 </head>
 <body>
 	<form id= "form1" action = "http://localhost:3000/search" method = "post">
-		 <input type = 'text' name = "keyword" >
-		 <input type = "submit" value ="Search"/>
-	 </form>
+		<span>Best Search</span>
+		<br />
+		<input type='text' id="submitTxt" name = "keyword"
+		 placeholder="Enter the keyword">
+		<input type="submit" id="bn" value ="Search"/>
 	</form>
 
-	<!-- <script type="text/javascript">
-	var userInputStr = '';
-		var targetUrl = "1/search";
-
-		var btnObj = document.querySelector('#btn1');
-		btnObj.onclick = function() {
-			userInputStr = document.getElementById('inp1').value;
-			getSearchContent();
-		}
-
-
-
-		function getSearchContent() {
-			// var pattern = /[^0-9a-z]/gi;
-
-			// var isLegalStr = pattern.test(userInputStr);
-			if (userInputStr === '') {
-				alert("please  input  keyword or input the legal string");
-			} else {
-				// send ajax
-				sendAjax(targetUrl);
-			}
-		}
-
-
-		// encapsulate ajax
-		function sendAjax(url) {
-			var xmlhttp;
-			if (window.XMLHttpRequest) {
-				xmlhttp = new XMLHttpRequest();
-			} else {
-				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-
-			xmlhttp.onreadystatechange = function() {
-				if (xmlhttp.readyState === 4 && xmlhttp.status === 400) {
-					jsonObj = JSON.parse(xmlhttp.responseText);
-				}
-			}
-
-			xmlhttp.open('GET', url, true);
-			xmlhttp.send();
-		}
-	</script> -->
-
+	<script type="text/javascript">
+		document.querySelector('#submitTxt').focus();
+	</script>
 </body>
 </html>

@@ -10,6 +10,7 @@ var master = require('../multiProcess/master.js');
 
 
 var fileBuf = Buffer.from(fs.readFileSync('../view/index.html'));
+var cssFile = Buffer.from(fs.readFileSync('../view/index.css'));
 exports = module.exports = router;
 
 /* --------------router-start------------------*/
@@ -24,10 +25,16 @@ function router(req, res) {
 			res.writeHead(200, {"Content-type": "text/html"});
 			res.end(fileBuf);
 			break;
+		
+		// css file	
+		case '/index.css':
+			res.writeHead(200, {"Content-type": "text/css"});
+			res.end(cssFile);
+			break;
+
 
 		case '/search':
 			// getContent
-			// res.
 			res.writeHead(200, {"Content-type": "text/html"});
 			// var a = jsonStr = getContent();
 			req.on('data', (d) => {
