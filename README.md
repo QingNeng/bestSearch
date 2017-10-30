@@ -13,6 +13,6 @@ index
 
 search result:
 
-![search](https://raw.githubusercontent.com/QingNeng/bestSearch/master/screenshot/bestSearch.png)
+![search](https://raw.githubusercontent.com/QingNeng/bestSearch/master/screenshot/search.png)
 
 ---
