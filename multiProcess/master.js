@@ -59,4 +59,4 @@ exports = module.exports = function (keyword, res) {
 
 	getChildProData();
 
-} // exports
+} 
