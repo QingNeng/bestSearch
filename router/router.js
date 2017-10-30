@@ -1,7 +1,7 @@
 var fs     = require('fs');
 var http   = require('http');
 var cp     = require('child_process');
-var master = require('../multiProcess/master.js').master;
+var master = require('../multiProcess/master.js');
 
 //-------------------------------
 // console.log(typeof master);

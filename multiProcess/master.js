@@ -1,4 +1,4 @@
-exports = module.exports.master = function(keyword, res) {
+exports = module.exports = function (keyword, res) {
 	var cp = require('child_process');
 	var allData = [];
 
@@ -39,7 +39,7 @@ exports = module.exports.master = function(keyword, res) {
 									<html lang="en">
 									<head>
 										<meta charset="UTF-8">
-										<title>Document</title>
+										<title>bestSearch</title>
 										<style type="text/css">
 											a {
 												text-decoration: none;
@@ -48,8 +48,8 @@ exports = module.exports.master = function(keyword, res) {
 										</style>
 									</head>
 									<body style="margin-left: 30%;">
-										<h4 style="margin-left: 3%;"><a href=${allData[0][0]}>${allData[0][1]}  ---bing</a></h4>
-										<h4 style="margin-left: 3%;"><a href=${allData[1][0]}>${allData[1][1]}  ---sogou</a></h4>
+										<h4 style="margin-left: 3%;"><a href=${allData[0][0]}>${allData[0][1]}  &emsp;&emsp;---bing</a></h4>
+										<h4 style="margin-left: 3%;"><a href=${allData[1][0]}>${allData[1][1]}  &emsp;&emsp;---sogou</a></h4>
 									</body>
 									</html>`;
 
