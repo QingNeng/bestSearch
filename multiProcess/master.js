@@ -43,13 +43,13 @@ exports = module.exports = function (keyword, res) {
 										<style type="text/css">
 											a {
 												text-decoration: none;
-												color: black;
+												color: #0000CC;
 											}
 										</style>
 									</head>
 									<body style="margin-left: 30%;">
-										<h4 style="margin-left: 3%;"><a href=${allData[0][0]}>${allData[0][1]}  &emsp;&emsp;---bing</a></h4>
-										<h4 style="margin-left: 3%;"><a href=${allData[1][0]}>${allData[1][1]}  &emsp;&emsp;---sogou</a></h4>
+										<p style="margin-left: 3%;"><a href=${allData[0][0]}>${allData[0][1]}  &emsp;&emsp;---bing</a></p>
+										<p style="margin-left: 3%;"><a href=${allData[1][0]}>${allData[1][1]}  &emsp;&emsp;---sogou</a></p>
 									</body>
 									</html>`;
 
