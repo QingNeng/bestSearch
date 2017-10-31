@@ -2,12 +2,11 @@ exports = module.exports = function (keyword, res) {
 	var cp = require('child_process');
 	var allData = [];
 
-	// var baiduProcess = cp.fork(__dirname + '/baiduProcess.js');
 	var bingProcess  = cp.fork(__dirname + '/bingProcess.js');
 	var sogouProcess = cp.fork(__dirname + '/sogouProcess.js');
+	// var baiduProcess = cp.fork(__dirname + '/baiduProcess.js');
 
-// send keyword to children process
-	// console.log('keyword:', keyword);
+	// send keyword to children process
 	bingProcess.send(keyword);
 	sogouProcess.send(keyword);
 
@@ -52,8 +51,6 @@ exports = module.exports = function (keyword, res) {
 										<p style="margin-left: 3%;"><a href=${allData[1][0]}>${allData[1][1]}  &emsp;&emsp;---sogou</a></p>
 									</body>
 									</html>`;
-
-		// res.end(allData + '');
 		res.end(html);
 	}
 
