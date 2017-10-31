@@ -16,6 +16,16 @@
 
 	<script type="text/javascript">
 		document.querySelector('#submitTxt').focus();
+		document.querySelector('#bn').onclick = function() {
+			var keyword = document.querySelector('#submitTxt').value;
+			var pattern = /\S/g;
+
+			keyword = keyword.match(pattern);
+			if (!keyword) {
+				alert('The keyword be required!');
+				return false;
+			}
+		}
 	</script>
 </body>
 </html>
